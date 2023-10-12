@@ -29,9 +29,9 @@ bar-light bg-light">
 					<a class="nav-item nav-link" href="<?= base_url('member/logout'); ?>"><i
 								class="fas fw fa-login"></i> Log out</a>
 				<?php } else { ?>
-					<a class="nav-item nav-link" data-toggle="modal" data- target="#daftarModal" href="#"><i
+					<a class="nav-item nav-link" data-toggle="modal" data- target="#daftarModal" href="#daftarModal"><i
 								class="fas fw fa-login"></i> Daftar</a>
-					<a class="nav-item nav-link" data-toggle="modal" data- target="#loginModal" href="#"><i
+					<a class="nav-item nav-link" data-toggle="modal" data- target="#loginModal" href="#loginModal"><i
 								class="fas fw fa-login"></i> Log in</a>
 				<?php } ?>
 				<span class="nav-item nav-link nav- right"

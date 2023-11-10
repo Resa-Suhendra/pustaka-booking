@@ -1,6 +1,19 @@
 <div class="container">
 	<center>
 		<table>
+			<?php
+			foreach ($useraktif as $u) {
+			?>
+				<tr>
+					<td nowrap="nowrap">Terima Kasih <b><?= $u->nama; ?></b></td>
+				</tr>
+				<tr>
+					<td>Buku yang ingin Anda pinjam adalah sebagai berikut : </td>
+				</tr>
+
+			<?php
+			}
+			?>
 			<tr>
 				<td>
 					<div class="table-responsive full-width">
@@ -11,7 +24,6 @@
 								<th>Penulis</th>
 								<th>Penerbit</th>
 								<th>Tahun</th>
-								<th>Pilihan</th>
 							</tr>
 							<?php
 							$no = 1;
@@ -23,12 +35,10 @@
 										<img src="<?= base_url('assets/img/upload/' . $t['image']); ?>" class="rounded"
 											 alt="No Picture" width="10%">
 									</td>
-									<td nowrap="nowrap"><?= $t['penulis']; ?></td>
+									<td nowrap="nowrap"><?= $t['pengarang']; ?></td>
 									<td nowrap="nowrap"><?= $t['penerbit']; ?></td>
 									<td nowrap="nowrap"><?= substr($t['tahun_terbit'], 0, 4); ?></td>
-									<td nowrap="nowrap">
-										<a href="<?= base_url('booking/hapusbooking/' . $t['id_buku']); ?>" onclick="return_konfirm('Yakin tidak Jadi Booking '.$t['judul_buku'])"><i class="btn btn-sm btn-outline-danger fas fw fa-trash"> Hapus </i></a>
-									</td>
+
 								</tr>
 
 								<?php
@@ -40,18 +50,13 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan="3">
+				<td>
 					<hr>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="3">
-					<a class="btn btn-sm btn-outline-primary" href="<?php echo base_url(); ?>">
-						<span class="fas fw fa-play"></span> Lanjutkan Booking Buku
-					</a>
-					<a class="btn btn-sm btn-outline-success" href="<?php echo base_url() . 'booking/bookingSelesai/' . $this->session->userdata('id_user'); ?>">
-						<span class="fas fw fa-stop"></span> Selesaikan Booking
-					</a>
+				<td>
+					<a class="btn btn-sm btn-outline-danger" onclick="information('Waktu Pengambilan Buku 1x24 jam dari Booking!!!')" href="<?php echo base_url() . 'booking/exportToPdf/' . $this->session->userdata('id_user'); ?>"><span class="far fa-lg fa-fw fa-file-pdf"></span> Pdf</a>
 				</td>
 			</tr>
 		</table>

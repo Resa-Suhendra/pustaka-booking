@@ -7,7 +7,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 			</div>
-			<form action="<? base_url('member'); ?>" method="post">
+			<form action="<?= base_url('member'); ?>" method="post">
 				<div class="modal-body">
 
 					<div class="form-group row">
